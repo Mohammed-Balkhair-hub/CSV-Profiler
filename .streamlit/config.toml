@@ -2,5 +2,5 @@
 base="light" # Ensures the app starts in light mode
 backgroundColor = "white"
 secondaryBackgroundColor = "#f0f2f6" # A light gray for containers
-primaryColor = "#FF4B4B" # Example primary color (optional)
+primaryColor = "#49A4A1" # Example primary color (optional)
 textColor = "black" # Ensures text is readable on white

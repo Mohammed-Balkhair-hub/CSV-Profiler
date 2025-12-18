@@ -37,8 +37,8 @@ def gradient_header(text, color1, color2, font_size=30, text_color='#FFFFFF'):
 # Another example with different colors
 gradient_header(
     text="CSV Profiler",
-    color1="#534F91", # Dark violet
-    color2="#49A4A1", # Tomato
+    color1="#534F91", #
+    color2="#49A4A1", # 
     font_size=50,
     text_color='#ffffff'
 )
@@ -79,7 +79,7 @@ if uploaded is not None:
     text = raw.decode("utf-8-sig")
     rows = list(csv.DictReader(StringIO(text)))
 
-    if st.button("Generate report"):
+    if st.button("Generate Report",type="primary"):
         st.session_state["report"] = profile_rows(rows)
         
 
@@ -94,8 +94,8 @@ if report is not None:
     md_text = render_markdown(report)
 
     l, r = st.columns(2)
-    l.download_button("Get JSON", data=json_text, file_name="report.json")
-    r.download_button("Get Markdown", data=md_text, file_name="report.md")          
+    l.download_button("Get JSON", data=json_text, file_name="report.json",type="primary")
+    r.download_button("Get Markdown", data=md_text, file_name="report.md",type="primary")          
     if show_preview:        
         with st.expander("See explanation"):
             st.subheader("Markdown preview")
