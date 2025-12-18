@@ -13,9 +13,11 @@ app=typer.Typer()
 @app.command(help="Profile a CSV file and write JSON + Markdown")
 def profile(
     input_path:Path=typer.Argument(..., help="Path to the input CSV file"),
-    output_path:Path=typer.Option(Path("outputs"),"--output-path", help="Path to the output directory"),
+    output_path:Path=typer.Option(Path("outputs"),"--output-dir", help="Path to the output directory"),
     report_name:str=typer.Option("report", "--report-name", help="Name of the report file"),
     preview:bool=typer.Option(False, "--preview", help="Preview the report"),):
+
+    output_path.mkdir(parents=True, exist_ok=True)
     try:
         start_time=time.time()
 
