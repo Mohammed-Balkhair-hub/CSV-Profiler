@@ -7,7 +7,7 @@ def main() -> None:
     rows = read_csv_rows("data/sample.csv")
     report = profile_rows(rows)
     write_json(report, "outputs/report.json")
-    render_markdown(report, "outputs/report.md")
+    create_markdown(report, "outputs/report.md")
     print("Wrote outputs/report.json and outputs/report.md")
 
 

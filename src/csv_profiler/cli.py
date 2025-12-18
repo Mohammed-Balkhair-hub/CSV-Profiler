@@ -5,7 +5,7 @@ from pathlib import Path
 
 from csv_profiler.io import read_csv_rows
 from csv_profiler.profiling import profile_rows
-from csv_profiler.render import write_json, render_markdown
+from csv_profiler.render import write_json,create_markdown
 
 
 app=typer.Typer()
@@ -22,7 +22,7 @@ def profile(
         rows=read_csv_rows(input_path)
         report=profile_rows(rows)
         write_json(report, output_path / f"{report_name}.json")
-        render_markdown(report, output_path / f"{report_name}.md")
+        create_markdown(report, output_path / f"{report_name}.md")
 
         end_time=time.time()
         duration=end_time-start_time

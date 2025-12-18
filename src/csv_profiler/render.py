@@ -74,8 +74,13 @@ def render_markdown(report: dict) -> str:
                 lines.append(f"  - {value}: {cnt}\n")
 
         lines.append("\n")
+
     return "".join(lines)
             
+def create_markdown(report:dict,path)-> None:
+    text=render_markdown(report)
+    with open(path, mode='w') as f:
+        f.write(text)
 
 
 
