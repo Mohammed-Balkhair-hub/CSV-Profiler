@@ -6,11 +6,58 @@ from csv_profiler.render import render_markdown
 import json
 
 
+def gradient_header(text, color1, color2, font_size=30, text_color='#FFFFFF'):
+    """
+    Creates a header with a gradient background using custom CSS.
+
+    Args:
+        text (str): The text to display in the header.
+        color1 (str): The starting color of the gradient (e.g., '#FF4B4B').
+        color2 (str): The ending color of the gradient (e.g., '#26B99A').
+        font_size (int): The font size in pixels.
+        text_color (str): The color of the header text (e.g., '#FFFFFF').
+    """
+    st.markdown(f"""
+    <p style="
+        background-image: linear-gradient(to right, {color1}, {color2});
+        color: {text_color};
+        font-size: {font_size}px;
+        font-weight: bold;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+    ">{text}</p>
+    """, unsafe_allow_html=True)
+
+
+
+
+
+
+# Another example with different colors
+gradient_header(
+    text="CSV Profiler",
+    color1="#534F91", # Dark violet
+    color2="#49A4A1", # Tomato
+    font_size=50,
+    text_color='#ffffff'
+)
+
 st.set_page_config(page_title="CSV Profiler", layout="wide")
-st.title("CSV Profiler")
-st.caption("Week 01 • Day 04 — Streamlit GUI")
+#st.title("CSV Profiler")
+st.caption("Week 01 • SDAIA AI Proffesionals camp")
 
 
+
+#SIDEBAR
+st.sidebar.write("")
+st.sidebar.write("")
+
+# The URL of the image you want to display
+image_url = "https://salogos.org/wp-content/uploads/2025/05/0191-1568x545.png"
+
+# Display the image using st.image()
+st.sidebar.image(image_url, width=250)
 
 # get the input
 st.sidebar.header("Inputs")
@@ -53,6 +100,19 @@ if report is not None:
         with st.expander("See explanation"):
             st.subheader("Markdown preview")
             st.markdown(md_text)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
