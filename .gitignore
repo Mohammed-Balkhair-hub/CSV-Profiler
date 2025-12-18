@@ -1,2 +1,3 @@
 outputs/
 src/__pycache__
+src/csv_profiler/__pycache__
